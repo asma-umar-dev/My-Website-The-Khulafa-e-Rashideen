@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خلفاء راشدین</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Amiri:wght@400;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:     #F9F5EE;
+  --bg2:    #F0E8D8;
+  --card:   #FFFFFF;
+  --border: #DDD0B0;
+  --gold:   #8B6914;
+  --glight: #C9A84C;
+  --gdark:  #5A4200;
+  --gs:     #FBF3DC;
+  --text:   #1C0F00;
+  --text2:  #4A3010;
+  --text3:  #8B6030;
+  --c1:#2E7D32; --c2:#1565C0; --c3:#6A1B9A; --c4:#B71C1C;
+}
+body.dark {
+  --bg:#100A00; --bg2:#1A1000; --card:#1E1200;
+  --border:#3A2A00; --gold:#D4A840; --glight:#F0C050;
+  --gdark:#A07020; --gs:#2A1A00;
+  --text:#F5EAD0; --text2:#D4B870; --text3:#A08030;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body {
+  font-family:'Noto Nastaliq Urdu',serif;
+  background:var(--bg);
+  color:var(--text);
+  direction:rtl;
+  min-height:100vh;
+  transition:background 0.3s, color 0.3s;
+}
+
+/* ── TOP NAV ── */
+.topnav {
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:var(--card);
+  border-bottom:2px solid var(--border);
+  box-shadow:0 2px 16px rgba(0,0,0,0.08);
+  direction:ltr;
+  padding:0;
+}
+
+.topnav-row1 {
+  display:flex;align-items:center;
+  padding:8px 12px;gap:8px;
+  border-bottom:1px solid var(--border);
+}
+
+.logo {
+  display:flex;align-items:center;gap:7px;flex-shrink:0;
+}
+.logo-moon {
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,#1A0A00,#3A2000);
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;
+}
+.logo-text {
+  display:flex;flex-direction:column;line-height:1.1;
+}
+.logo-en {
+  font-family:'Cinzel',serif;font-size:8px;
+  font-weight:700;letter-spacing:2px;
+  color:var(--glight);text-transform:uppercase;
+}
+.logo-ur {
+  font-family:'Noto Nastaliq Urdu',serif;
+  font-size:11px;color:var(--text2);font-weight:600;
+}
+
+/* Nav buttons row */
+.topnav-row2 {
+  display:flex;align-items:stretch;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  padding:6px 8px;
+  gap:6px;
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+}
+.topnav-row2::-webkit-scrollbar{display:none;}
+
+.tnbtn {
+  flex:0 0 auto;
+  background:var(--card);
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:2px;cursor:pointer;
+  padding:7px 12px 6px;
+  position:relative;
+  transition:all 0.2s;
+  min-width:62px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.07);
+}
+.tnbtn::after{
+  content:'';position:absolute;
+  bottom:-1px;left:10%;right:10%;
+  height:2.5px;border-radius:2px 2px 0 0;
+  background:var(--glight);
+  transform:scaleX(0);transition:transform 0.2s;
+}
+.tnbtn.active{
+  background:var(--gs);
+  border-color:var(--glight);
+  box-shadow:0 2px 8px rgba(201,168,76,0.2);
+}
+.tnbtn.active::after{transform:scaleX(1);}
+.tnbtn .tni{font-size:18px;transition:transform 0.2s;}
+.tnbtn.active .tni{transform:scale(1.1);}
+.tnbtn .tnur{
+  font-family:'Noto Nastaliq Urdu',serif;
+  font-size:9px;color:var(--text2);
+  transition:color 0.2s;white-space:nowrap;
+  line-height:1.4;
+}
+.tnbtn.active .tnur{color:var(--gold);font-weight:700;}
+.tnbtn .tnen{
+  font-family:'Cinzel',serif;
+  font-size:7px;color:var(--text3);
+  letter-spacing:0.3px;white-space:nowrap;
+}
+.tnbtn.active .tnen{color:var(--gold);}
+.tnbtn:hover:not(.active){
+  background:var(--gs);
+  border-color:var(--glight);
+  transform:translateY(-1px);
+}
+
+/* ── PAGES ── */
+.page{display:none;padding-top:90px;padding-bottom:16px;min-height:100vh;}
+.page.active{display:block;}
+
+/* ── HOME ── */
+.home-hero {
+  background:linear-gradient(160deg,#1A0800 0%,#3A1800 50%,#2A1000 100%);
+  padding:36px 20px 28px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.home-hero::after {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0,rgba(201,168,76,0.2),transparent 70%);
+  pointer-events:none;
+}
+.bism {
+  font-family:'Amiri',serif;
+  font-size:clamp(28px,6vw,54px);
+  color:var(--glight);
+  line-height:1.6;margin-bottom:12px;
+  text-shadow:0 0 30px rgba(201,168,76,0.4);
+  position:relative;z-index:1;
+}
+.home-title {
+  font-size:clamp(26px,5vw,42px);
+  color:#fff;font-weight:700;
+  margin-bottom:6px;position:relative;z-index:1;
+}
+.home-sub {
+  font-size:14px;color:rgba(255,255,255,0.6);
+  position:relative;z-index:1;
+}
+
+/* Hadith strip */
+.hadith-strip {
+  background:var(--gs);
+  border-top:2px solid var(--glight);
+  border-bottom:2px solid var(--glight);
+  padding:18px 20px;text-align:center;
+  line-height:2.2;font-size:14px;color:var(--text);
+}
+.hadith-ar {
+  font-family:'Amiri',serif;
+  font-size:clamp(18px,3vw,26px);
+  color:var(--gold);display:block;
+  margin:6px 0;line-height:2;
+}
+.hadith-ref {
+  font-size:11px;color:var(--text3);margin-top:4px;display:block;
+  font-style:italic;
+}
+
+/* Section header */
+.sec-head {
+  text-align:center;padding:28px 16px 16px;
+}
+.sec-head h2 {
+  font-size:clamp(20px,4vw,30px);
+  color:var(--text);margin-bottom:4px;
+}
+.sec-head p {font-size:13px;color:var(--text3);}
+
+/* Khalifa cards */
+.kgrid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:14px;max-width:700px;margin:0 auto 36px;
+  padding:0 14px;
+}
+.kcard {
+  background:var(--card);
+  border-radius:18px;
+  border:1.5px solid var(--border);
+  padding:20px 14px 16px;
+  text-align:center;
+  cursor:pointer;
+  transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position:relative;overflow:hidden;
+}
+body.dark .kcard{background:#1A1000;border-color:#2A1A00;}
+.kcard::before {
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  border-radius:18px 18px 0 0;
+}
+.kcard.c1::before{background:var(--c1);}
+.kcard.c2::before{background:var(--c2);}
+.kcard.c3::before{background:var(--c3);}
+.kcard.c4::before{background:var(--c4);}
+.kcard:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,0.12);}
+.kcard:active{transform:translateY(-2px);}
+
+.knum {
+  width:40px;height:40px;border-radius:50%;
+  margin:0 auto 10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Amiri',serif;font-size:17px;font-weight:700;color:#fff;
+}
+.c1 .knum{background:var(--c1);}
+.c2 .knum{background:var(--c2);}
+.c3 .knum{background:var(--c3);}
+.c4 .knum{background:var(--c4);}
+
+.kname {font-size:clamp(13px,2.5vw,16px);color:var(--text);font-weight:700;margin-bottom:4px;line-height:1.6;}
+.klaqab {
+  display:inline-block;
+  background:var(--gs);border:1px solid var(--border);
+  border-radius:20px;padding:2px 10px;
+  font-size:11px;color:var(--gold);margin:3px 1px;
+}
+.kperiod {
+  font-family:'Cinzel',serif;font-size:9px;
+  color:var(--text3);letter-spacing:1px;
+  margin-top:8px;display:block;
+}
+
+/* ── KHALIFA DETAIL ── */
+.ktabs-wrap {
+  padding:16px 14px 0;
+  max-width:700px;margin:0 auto;
+}
+.ktabs {
+  display:flex;
+  border:1.5px solid var(--border);
+  border-radius:50px;overflow:hidden;
+  background:var(--bg2);
+}
+body.dark .ktabs{background:#1A1000;border-color:#3A2A00;}
+.ktab {
+  flex:1;padding:10px 4px;
+  background:transparent;border:none;
+  font-family:'Noto Nastaliq Urdu',serif;
+  font-size:12px;color:var(--text2);
+  cursor:pointer;transition:all 0.2s;
+  border-left:1px solid var(--border);
+}
+.ktab:last-child{border-left:none;}
+.ktab.active{background:var(--glight);color:#fff;font-weight:700;}
+.ktab:hover:not(.active){background:var(--gs);}
+
+.kpage{display:none;padding:16px 14px 10px;max-width:700px;margin:0 auto;}
+.kpage.active{display:block;animation:fadeUp 0.3s ease;}
+
+.kbanner {
+  border-radius:16px;padding:24px 20px;
+  color:#fff;margin-bottom:18px;
+  position:relative;overflow:hidden;
+}
+.kbanner::before {
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,0.03) 0,rgba(255,255,255,0.03) 1px,transparent 0,transparent 40px);
+}
+.kb1{background:linear-gradient(135deg,#1B5E20,#2E7D32);}
+.kb2{background:linear-gradient(135deg,#0D47A1,#1565C0);}
+.kb3{background:linear-gradient(135deg,#4A148C,#6A1B9A);}
+.kb4{background:linear-gradient(135deg,#7F0000,#B71C1C);}
+.kbig{font-size:40px;margin-bottom:10px;position:relative;}
+.kbname{font-size:clamp(18px,3.5vw,26px);font-weight:700;position:relative;margin-bottom:4px;}
+.kbtitle{font-size:13px;opacity:0.8;position:relative;margin-bottom:12px;}
+.kbbadges{display:flex;flex-wrap:wrap;gap:6px;position:relative;}
+.kbbadge{
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:20px;padding:3px 12px;font-size:11px;
+}
+
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.icard{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:12px;padding:12px;text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+body.dark .icard{background:#1A1000;border-color:#2A1A00;}
+.ilabel{font-family:'Cinzel',serif;font-size:9px;color:var(--text3);letter-spacing:1px;margin-bottom:4px;text-transform:uppercase;}
+.ival{font-size:13px;color:var(--text);font-weight:700;line-height:1.7;}
+
+/* Info block */
+.iblock {
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:14px;padding:20px;margin-bottom:14px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  position:relative;overflow:hidden;
+}
+body.dark .iblock{background:#1A1000;border-color:#2A1A00;}
+.iblock::before {
+  content:'';position:absolute;top:0;right:0;
+  width:4px;height:100%;border-radius:0 14px 14px 0;
+  background:linear-gradient(to bottom,var(--glight),var(--gold));
+}
+.iblock-title {
+  font-size:17px;font-weight:700;color:var(--text);
+  margin-bottom:14px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.iblock-body {
+  font-size:15px;line-height:2.6;color:var(--text2);
+}
+
+/* EN toggle */
+.en-btn {
+  background:var(--gs);border:1px solid var(--glight);
+  color:var(--gold);border-radius:20px;
+  padding:3px 10px;font-size:11px;
+  cursor:pointer;transition:all 0.2s;
+  font-family:'Cinzel',serif;font-weight:700;
+  flex-shrink:0;white-space:nowrap;
+}
+.en-btn:hover,.en-btn.on{background:var(--glight);color:#fff;}
+.en-box {
+  display:none;margin-top:12px;
+  padding:12px 16px;
+  background:#EEF2FF;border:1.5px solid #C0CCF0;
+  border-radius:10px;
+  font-family:'Cinzel',serif;font-size:12px;
+  color:#1A2560;line-height:1.9;
+  direction:ltr;text-align:left;
+}
+body.dark .en-box{background:#080F30;border-color:#1A2A70;color:#A0B0F0;}
+.en-box.show{display:block;animation:fadeUp 0.25s ease;}
+
+/* Ayat block */
+.ayat {
+  background:var(--gs);
+  border-right:4px solid var(--glight);
+  padding:14px 16px;border-radius:8px;
+  margin:12px 0;
+}
+.ayat-ar {
+  font-family:'Amiri',serif;
+  font-size:clamp(18px,3vw,24px);
+  line-height:2.4;color:var(--text);
+}
+.ayat-ref {
+  font-size:11px;color:var(--gold);
+  margin-top:6px;display:block;
+  font-style:italic;
+}
+
+/* Fazail list */
+.flist{list-style:none;}
+.flist li{
+  padding:10px 0;border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:10px;
+  flex-direction:row-reverse;
+  line-height:2.2;font-size:14px;color:var(--text2);
+}
+.flist li:last-child{border-bottom:none;}
+.ficon{font-size:16px;flex-shrink:0;margin-top:3px;}
+
+/* Hadith card */
+.hcard{
+  background:var(--gs);border-right:4px solid var(--glight);
+  border-radius:10px;padding:14px 16px;
+  margin:10px 0;font-size:14px;
+  line-height:2.3;color:var(--text2);
+}
+body.dark .hcard{background:#2A1A00;}
+.hcard-ref{font-size:11px;color:var(--text3);margin-top:4px;font-style:italic;}
+
+/* ── QUIZ/TEST ── */
+.quiz-hero{
+  background:linear-gradient(135deg,#1A0800,#3A1800);
+  padding:28px 20px 22px;text-align:center;color:#fff;
+}
+.quiz-hero h1{font-size:clamp(20px,4vw,30px);color:var(--glight);margin-bottom:6px;}
+.quiz-hero p{font-size:13px;color:rgba(255,255,255,0.65);}
+
+.qstats{
+  display:flex;gap:10px;justify-content:center;
+  padding:14px 16px;flex-wrap:wrap;
+}
+.qstat{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:12px;padding:10px 16px;
+  text-align:center;min-width:72px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+body.dark .qstat{background:#1A1000;border-color:#2A1A00;}
+.qstat-n{font-size:22px;font-weight:700;color:var(--glight);font-family:'Cinzel',serif;}
+.qstat-l{font-size:11px;color:var(--text3);line-height:1.5;}
+.qstat-en{font-family:'Cinzel',serif;font-size:9px;display:block;}
+
+.qprog{height:5px;background:var(--bg2);margin:0 16px 18px;border-radius:10px;overflow:hidden;}
+body.dark .qprog{background:#2A1A00;}
+.qprog-bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--glight));border-radius:10px;transition:width 0.4s;}
+
+.qarea{max-width:680px;margin:0 auto;padding:0 14px 20px;}
+
+.qbox{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,0.07);
+  margin-bottom:16px;
+}
+body.dark .qbox{background:#1A1000;border-color:#2A1A00;}
+.qbox-head{
+  background:var(--gs);
+  border-bottom:1.5px solid var(--border);
+  padding:18px 18px 14px;
+}
+body.dark .qbox-head{background:#221200;}
+.qnum{
+  font-family:'Cinzel',serif;font-size:10px;
+  font-weight:700;color:var(--glight);
+  letter-spacing:1px;margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.qnum-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--glight);color:#fff;
+  font-size:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+}
+.qtext{
+  font-size:clamp(15px,2.5vw,18px);
+  color:var(--text);font-weight:700;line-height:2.2;
+}
+.qopts{padding:14px 16px;display:flex;flex-direction:column;gap:10px;}
+.qopt{
+  background:var(--bg2);border:2px solid var(--border);
+  border-radius:12px;padding:13px 16px;
+  cursor:pointer;transition:all 0.2s;
+  display:flex;align-items:center;
+  gap:12px;direction:rtl;
+}
+body.dark .qopt{background:#221200;border-color:#3A2A00;}
+.qopt:hover:not(.revealed){
+  background:var(--gs);border-color:var(--glight);
+  transform:translateX(-2px);
+}
+.oletter{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--border);color:var(--text2);
+  font-family:'Cinzel',serif;font-size:11px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all 0.2s;
+}
+.otext{
+  font-size:14px;color:var(--text2);line-height:1.8;flex:1;
+}
+.qopt.correct{background:#E8F5E9!important;border-color:#2E7D32!important;}
+.qopt.correct .oletter{background:#2E7D32;color:#fff;}
+.qopt.correct .otext{color:#1B5E20;font-weight:700;}
+body.dark .qopt.correct{background:#081A08!important;border-color:#2E7D32!important;}
+body.dark .qopt.correct .otext{color:#81C784;}
+.qopt.wrong{background:#FFEBEE!important;border-color:#B71C1C!important;}
+.qopt.wrong .oletter{background:#B71C1C;color:#fff;}
+.qopt.wrong .otext{color:#7F0000;}
+body.dark .qopt.wrong{background:#1A0505!important;border-color:#B71C1C!important;}
+body.dark .qopt.wrong .otext{color:#EF9A9A;}
+.qopt.revealed{cursor:default;transform:none!important;}
+
+.qexp{
+  display:none;margin:0 16px 16px;
+  padding:12px 16px;
+  background:var(--gs);border-right:4px solid var(--glight);
+  border-radius:10px;font-size:13px;
+  color:var(--text2);line-height:2.2;
+}
+body.dark .qexp{background:#2A1A00;}
+.qexp.show{display:block;animation:fadeUp 0.3s ease;}
+
+.qnav{display:flex;gap:10px;justify-content:center;padding:4px 14px 10px;}
+.qnbtn{
+  flex:1;max-width:180px;
+  padding:12px 10px;border-radius:50px;border:none;
+  cursor:pointer;transition:all 0.22s;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+}
+.qnbtn-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:14px;font-weight:700;}
+.qnbtn-en{font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.5px;font-weight:600;}
+.qnbtn.primary{
+  background:linear-gradient(135deg,var(--glight),var(--gold));
+  color:#fff;box-shadow:0 4px 12px rgba(139,105,20,0.3);
+}
+.qnbtn.primary:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(139,105,20,0.4);}
+.qnbtn.secondary{
+  background:var(--card);border:2px solid var(--border);color:var(--text2);
+}
+body.dark .qnbtn.secondary{background:#1A1000;border-color:#3A2A00;color:var(--glight);}
+.qnbtn:disabled{opacity:0.35;cursor:not-allowed;transform:none!important;}
+
+.result-box{
+  background:var(--card);border-radius:20px;padding:36px 20px;
+  text-align:center;margin:10px 14px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+  border:1.5px solid var(--border);
+}
+body.dark .result-box{background:#1A1000;border-color:#2A1A00;}
+.result-emoji{font-size:64px;margin-bottom:14px;}
+.result-score{font-family:'Cinzel',serif;font-size:clamp(32px,6vw,52px);font-weight:700;color:var(--glight);}
+.result-pct{font-family:'Cinzel',serif;font-size:14px;color:var(--text3);margin-bottom:8px;}
+.result-msg{font-size:16px;color:var(--text2);line-height:2.2;margin-bottom:24px;}
+.result-restart{
+  padding:13px 36px;
+  background:linear-gradient(135deg,var(--glight),var(--gold));
+  color:#fff;border:none;border-radius:50px;
+  font-family:'Noto Nastaliq Urdu',serif;font-size:15px;
+  cursor:pointer;font-weight:700;
+  box-shadow:0 4px 14px rgba(139,105,20,0.35);
+  display:block;width:100%;max-width:260px;margin:0 auto;
+  transition:all 0.25s;
+}
+.result-restart:hover{transform:translateY(-2px);}
+
+/* ── BOTTOM NAV — hidden, top nav used instead ── */
+.bnav{display:none;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.page.active{animation:fadeUp 0.35s ease;}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:22px 20px;
+  background:linear-gradient(135deg,#1A0800,#0A0400);
+  color:rgba(255,255,255,0.5);
+  font-size:13px;line-height:2.2;
+}
+footer span{color:var(--glight);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:400px){
+  .kgrid{grid-template-columns:1fr 1fr;}
+  .igrid{grid-template-columns:1fr 1fr;}
+  .kbname{font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="topnav">
+  <!-- Row 1: Logo only -->
+  <div class="topnav-row1">
+    <div class="logo">
+      <div class="logo-moon">🌙</div>
+      <div class="logo-text">
+        <span class="logo-en">KHULAFA</span>
+        <span class="logo-ur">راشدین</span>
+      </div>
+    </div>
+  </div>
+  <!-- Row 2: Page buttons -->
+  <div class="topnav-row2">
+    <button class="tnbtn active" id="tn-home" onclick="go('home',this)">
+      <span class="tni">🏠</span><span class="tnur">مرکزی</span><span class="tnen">Home</span>
+    </button>
+    <button class="tnbtn" id="tn-khulafa" onclick="go('khulafa',this)">
+      <span class="tni">👑</span><span class="tnur">خلفاء</span><span class="tnen">Caliphs</span>
+    </button>
+    <button class="tnbtn" id="tn-waqiyat" onclick="go('waqiyat',this)">
+      <span class="tni">📖</span><span class="tnur">واقعات</span><span class="tnen">Events</span>
+    </button>
+    <button class="tnbtn" id="tn-fazail" onclick="go('fazail',this)">
+      <span class="tni">✨</span><span class="tnur">فضائل</span><span class="tnen">Virtues</span>
+    </button>
+    <button class="tnbtn" id="tn-qurbani" onclick="go('qurbani',this)">
+      <span class="tni">🌹</span><span class="tnur">قربانی</span><span class="tnen">Sacrifice</span>
+    </button>
+    <button class="tnbtn" id="tn-imtahan" onclick="go('imtahan',this)">
+      <span class="tni">📝</span><span class="tnur">امتحان</span><span class="tnen">Test</span>
+    </button>
+  </div>
+</div>
+
+<!-- PAGE STRIP removed -->
+
+<!-- ══════════ HOME ══════════ -->
+<div id="home" class="page active">
+
+  <div class="home-hero">
+    <div class="bism">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+    <div class="home-title">خلفاء راشدین</div>
+    <div class="home-sub">اسلام کے چار ہدایت یافتہ خلیفہ</div>
+  </div>
+
+  <div class="hadith-strip">
+    آقا ﷺ کا ارشاد مبارک:
+    <span class="hadith-ar">"عَلَيْكُمْ بِسُنَّتِي وَسُنَّةِ الْخُلَفَاءِ الرَّاشِدِينَ الْمَهْدِيِّينَ"</span>
+    "میری سنت اور ہدایت یافتہ خلفاء کی سنت کو مضبوطی سے تھام لو۔"
+    <span class="hadith-ref">— صحیح ابن ماجہ، ترمذی</span>
+  </div>
+
+  <div class="sec-head">
+    <h2>چاروں خلفائے راشدین</h2>
+    <p>کسی بھی خلیفہ پر کلک کریں — مکمل تفصیل پڑھیں</p>
+  </div>
+
+  <div class="kgrid">
+    <div class="kcard c1" onclick="goKhalifa('abu-bakr')">
+      <div class="knum">١</div>
+      <div class="kname">حضرت ابوبکر صدیق ؓ</div>
+      <span class="klaqab">الصدیق</span><span class="klaqab">یار غار</span>
+      <span class="kperiod">خلافت: 11 – 13 AH</span>
+      <div style="margin-top:8px;padding:6px 10px;background:#E8F5E9;border-radius:8px;font-size:11px;color:#1B5E20;line-height:1.8;">
+        🌿 <b>طبعی وفات</b><br>22 جمادی الثانی 13 ہجری<br>22 Aug 634 CE — عمر 63 سال
+      </div>
+    </div>
+    <div class="kcard c2" onclick="goKhalifa('umar')">
+      <div class="knum">٢</div>
+      <div class="kname">حضرت عمر فاروق ؓ</div>
+      <span class="klaqab">الفاروق</span><span class="klaqab">امیر المومنین</span>
+      <span class="kperiod">خلافت: 13 – 23 AH</span>
+      <div style="margin-top:8px;padding:6px 10px;background:#FFF3E0;border-radius:8px;font-size:11px;color:#BF360C;line-height:1.8;">
+        ⚔️ <b>شہادت</b><br>26 ذوالحجہ 23 ہجری<br>3 Nov 644 CE — نماز فجر میں زخمی
+      </div>
+    </div>
+    <div class="kcard c3" onclick="goKhalifa('uthman')">
+      <div class="knum">٣</div>
+      <div class="kname">حضرت عثمان غنی ؓ</div>
+      <span class="klaqab">ذو النورین</span><span class="klaqab">جامع القرآن</span>
+      <span class="kperiod">خلافت: 23 – 35 AH</span>
+      <div style="margin-top:8px;padding:6px 10px;background:#FFF3E0;border-radius:8px;font-size:11px;color:#BF360C;line-height:1.8;">
+        ⚔️ <b>شہادت</b><br>18 ذوالحجہ 35 ہجری<br>17 Jun 656 CE — تلاوت قرآن میں
+      </div>
+    </div>
+    <div class="kcard c4" onclick="goKhalifa('ali')">
+      <div class="knum">٤</div>
+      <div class="kname">حضرت علی المرتضیٰ ؓ</div>
+      <span class="klaqab">باب علم</span><span class="klaqab">اسد اللّٰہ</span>
+      <span class="kperiod">خلافت: 35 – 40 AH</span>
+      <div style="margin-top:8px;padding:6px 10px;background:#FFF3E0;border-radius:8px;font-size:11px;color:#BF360C;line-height:1.8;">
+        ⚔️ <b>شہادت</b><br>21 رمضان 40 ہجری<br>28 Jan 661 CE — نماز فجر جاتے ہوئے
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>رَضِيَ اللهُ عَنْهُمْ أَجْمَعِينَ</span><br>
+    اللّٰہ تعالیٰ ان سب سے راضی ہو — آمین 🌙
+  </footer>
+</div>
+
+<!-- ══════════ KHULAFA ══════════ -->
+<div id="khulafa" class="page">
+  <div class="quiz-hero">
+    <h1>👑 خلفاء کا تعارف</h1>
+    <p>پیدائش، خاندان، لقب، خلافت اور مکمل تعارف</p>
+  </div>
+
+  <div class="ktabs-wrap">
+    <div class="ktabs">
+      <button class="ktab active" id="kt-abu-bakr" onclick="showKtab('abu-bakr')">ابوبکر ؓ</button>
+      <button class="ktab" id="kt-umar" onclick="showKtab('umar')">عمر ؓ</button>
+      <button class="ktab" id="kt-uthman" onclick="showKtab('uthman')">عثمان ؓ</button>
+      <button class="ktab" id="kt-ali" onclick="showKtab('ali')">علی ؓ</button>
+    </div>
+  </div>
+
+  <!-- ABU BAKR -->
+  <div class="kpage active" id="kp-abu-bakr">
+    <div class="kbanner kb1">
+      <div class="kbig">🌿</div>
+      <div class="kbname">حضرت ابوبکر صدیق ؓ</div>
+      <div class="kbtitle">پہلے خلیفہ راشد — سب سے قریبی یار نبی ﷺ</div>
+      <div class="kbbadges">
+        <span class="kbbadge">الصدیق</span><span class="kbbadge">عتیق</span>
+        <span class="kbbadge">یار غار</span><span class="kbbadge">اول الخلفاء</span>
+      </div>
+    </div>
+    <div class="igrid">
+      <div class="icard"><div class="ilabel">اصل نام</div><div class="ival">عبداللّٰہ بن عثمان</div></div>
+      <div class="icard"><div class="ilabel">پیدائش</div><div class="ival">573 عیسوی — مکہ</div></div>
+      <div class="icard"><div class="ilabel">قبیلہ</div><div class="ival">بنو تیم — قریش</div></div>
+      <div class="icard"><div class="ilabel">خلافت</div><div class="ival">11 تا 13 ہجری</div></div>
+      <div class="icard"><div class="ilabel">مدت</div><div class="ival">2 سال 3 ماہ</div></div>
+      <div class="icard" style="border-top:3px solid #2E7D32;">
+        <div class="ilabel">🌿 طبعی وفات</div>
+        <div class="ival" style="color:#1B5E20;font-size:12px;">22 جمادی الثانی<br>13 ہجری — 634 CE<br>عمر: 63 سال</div>
+      </div>
+    </div>
+    <div class="iblock">
+      <div class="iblock-title">📜 تعارف <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        حضرت ابوبکر صدیق ؓ نبی کریم ﷺ کے سب سے قریبی دوست اور پہلے آزاد مرد مسلمان تھے۔ آپ ؓ نے ہجرت میں غار ثور میں ساتھ دیا، اپنا سارا مال راہ خدا میں دیا، اور وفات نبی ﷺ کے بعد اسلام کو بکھرنے سے بچایا۔ معراج کی خبر پر سب سے پہلے تصدیق کی — اس لیے "الصدیق" کہلائے۔
+        <div class="en-box">Hz. Abu Bakr (RA) was the closest companion of the Prophet ﷺ and the first free adult male to embrace Islam. He accompanied the Prophet in the Cave of Thawr, donated all his wealth for Islam, and saved the religion from collapse after the Prophet's passing. He confirmed the Night Journey (Isra) immediately — earning the title "As-Siddiq" (The Truthful).</div>
+      </div>
+    </div>
+    <div class="iblock">
+      <div class="iblock-title">🏛️ خلافت کے کارنامے <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        مرتدین سے جنگ لڑی اور اسلام کو محفوظ کیا۔ قرآن مجید کو پہلی بار کتاب کی شکل میں جمع کروایا۔ شام، عراق اور فارس کی طرف لشکر روانہ کیے۔ ان کا دور ڈھائی سال کا تھا مگر اثرات ابدی ہیں۔
+        <div class="en-box">He fought the Wars of Apostasy (Ridda Wars), saving Islam. He ordered the first compilation of the Quran after many huffaz were martyred at Yamama. He dispatched armies to Syria, Iraq, and Persia. His caliphate lasted just over 2 years but its effects are eternal.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UMAR -->
+  <div class="kpage" id="kp-umar">
+    <div class="kbanner kb2">
+      <div class="kbig">⚖️</div>
+      <div class="kbname">حضرت عمر فاروق ؓ</div>
+      <div class="kbtitle">دوسرے خلیفہ راشد — عدل کا پیکر</div>
+      <div class="kbbadges">
+        <span class="kbbadge">الفاروق</span><span class="kbbadge">امیر المومنین</span>
+        <span class="kbbadge">ابن الخطاب</span>
+      </div>
+    </div>
+    <div class="igrid">
+      <div class="icard"><div class="ilabel">اصل نام</div><div class="ival">عمر بن الخطاب</div></div>
+      <div class="icard"><div class="ilabel">پیدائش</div><div class="ival">584 عیسوی — مکہ</div></div>
+      <div class="icard"><div class="ilabel">قبیلہ</div><div class="ival">بنو عدی — قریش</div></div>
+      <div class="icard"><div class="ilabel">خلافت</div><div class="ival">13 تا 23 ہجری</div></div>
+      <div class="icard"><div class="ilabel">مدت</div><div class="ival">10 سال 6 ماہ</div></div>
+      <div class="icard" style="border-top:3px solid #B71C1C;">
+        <div class="ilabel">⚔️ شہادت</div>
+        <div class="ival" style="color:#7F0000;font-size:12px;">26 ذوالحجہ<br>23 ہجری — 644 CE<br>نماز فجر میں زخمی</div>
+      </div>
+    </div>
+    <div class="iblock">
+      <div class="iblock-title">📜 تعارف <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        حضرت عمر فاروق ؓ نبی ﷺ کی دعا پر اسلام لائے۔ آپ ؓ کے اسلام قبول کرنے کے بعد مسلمان کھل کر عبادت کرنے لگے۔ آپ ؓ کا دور خلافت اسلامی تاریخ کا سنہری دور ہے — ایران، شام، مصر، عراق، فلسطین فتح ہوئے۔ رات کو خود گشت کرتے، غریبوں کا حال جانتے۔ ہجری کیلنڈر اور بیت المال قائم کیا۔
+        <div class="en-box">Hz. Umar (RA) embraced Islam in answer to the Prophet's prayer. His conversion allowed Muslims to worship openly. His caliphate is Islam's golden age — Persia, Syria, Egypt, Iraq, and Palestine were conquered. He personally patrolled the streets at night, caring for the poor. He established the Hijri calendar and the public treasury (Bayt al-Mal).</div>
+      </div>
+    </div>
+    <div class="iblock">
+      <div class="iblock-title">⚡ قبول اسلام کا واقعہ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        حضرت عمر ؓ ایک رات تلوار لے کر نبی ﷺ کو قتل کرنے نکلے۔ راستے میں بہن فاطمہ ؓ کے گھر سورۃ طٰہٰ کی آیات سنیں — دل بدل گیا۔ فوراً نبی ﷺ کے پاس گئے اور کلمہ پڑھا۔ مسلمانوں نے تکبیر بلند کی۔
+        <div class="en-box">Hz. Umar once went out with his sword intending to kill the Prophet ﷺ. On the way he heard Quranic verses at his sister Fatima's home — his heart transformed completely. He immediately went to the Prophet ﷺ and embraced Islam. The Muslims joyfully proclaimed Takbir.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UTHMAN -->
+  <div class="kpage" id="kp-uthman">
+    <div class="kbanner kb3">
+      <div class="kbig">📗</div>
+      <div class="kbname">حضرت عثمان غنی ؓ</div>
+      <div class="kbtitle">تیسرے خلیفہ راشد — جامع القرآن</div>
+      <div class="kbbadges">
+        <span class="kbbadge">ذو النورین</span><span class="kbbadge">غنی</span>
+        <span class="kbbadge">جامع القرآن</span>
+      </div>
+    </div>
+    <div class="igrid">
+      <div class="icard"><div class="ilabel">اصل نام</div><div class="ival">عثمان بن عفان</div></div>
+      <div class="icard"><div class="ilabel">پیدائش</div><div class="ival">576 عیسوی — مکہ</div></div>
+      <div class="icard"><div class="ilabel">قبیلہ</div><div class="ival">بنو امیہ — قریش</div></div>
+      <div class="icard"><div class="ilabel">خلافت</div><div class="ival">23 تا 35 ہجری</div></div>
+      <div class="icard"><div class="ilabel">مدت</div><div class="ival">12 سال</div></div>
+      <div class="icard" style="border-top:3px solid #B71C1C;">
+        <div class="ilabel">⚔️ شہادت</div>
+        <div class="ival" style="color:#7F0000;font-size:12px;">18 ذوالحجہ<br>35 ہجری — 656 CE<br>تلاوت قرآن کے دوران</div>
+      </div>
+    </div>
+    <div class="iblock">
+      <div class="iblock-title">📜 تعارف <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        حضرت عثمان غنی ؓ نے نبی ﷺ کی دو بیٹیوں سے نکاح کیا — اس لیے "ذو النورین" (دو نوروں والے) کہلائے۔ آپ ؓ نے قرآن مجید کو ایک معیاری نسخے میں جمع کروایا جو آج بھی پوری دنیا میں پڑھا جاتا ہے۔ بئر رومہ خرید کر وقف کیا، غزوہ تبوک میں تہائی فوج کا سامان دیا۔
+        <div class="en-box">Hz. Uthman (RA) married two daughters of the Prophet ﷺ — earning the title "Dhul-Noorayn" (Possessor of Two Lights). He standardized the Quran into one authoritative copy — still recited worldwide today. He donated the Well of Rumah for all Muslims, and single-handedly equipped one-third of the Tabuk expedition army.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALI -->
+  <div class="kpage" id="kp-ali">
+    <div class="kbanner kb4">
+      <div class="kbig">🦁</div>
+      <div class="kbname">حضرت علی المرتضیٰ ؓ</div>
+      <div class="kbtitle">چوتھے خلیفہ راشد — شیر خدا، باب علم</div>
+      <div class="kbbadges">
+        <span class="kbbadge">المرتضیٰ</span><span class="kbbadge">حیدر</span>
+        <span class="kbbadge">اسد اللّٰہ</span><span class="kbbadge">باب علم</span>
+      </div>
+    </div>
+    <div class="igrid">
+      <div class="icard"><div class="ilabel">اصل نام</div><div class="ival">علی بن ابی طالب</div></div>
+      <div class="icard"><div class="ilabel">پیدائش</div><div class="ival">600 عیسوی — کعبے میں</div></div>
+      <div class="icard"><div class="ilabel">خاندان</div><div class="ival">بنو ہاشم — قریش</div></div>
+      <div class="icard"><div class="ilabel">خلافت</div><div class="ival">35 تا 40 ہجری</div></div>
+      <div class="icard"><div class="ilabel">مدت</div><div class="ival">4 سال 9 ماہ</div></div>
+      <div class="icard" style="border-top:3px solid #B71C1C;">
+        <div class="ilabel">⚔️ شہادت</div>
+        <div class="ival" style="color:#7F0000;font-size:12px;">21 رمضان<br>40 ہجری — 661 CE<br>نماز فجر جاتے ہوئے</div>
+      </div>
+    </div>
+    <div class="iblock">
+      <div class="iblock-title">📜 تعارف <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        حضرت علی ؓ نبی ﷺ کے چچا زاد بھائی اور داماد تھے۔ سب سے پہلے بچوں میں اسلام لائے۔ نبی ﷺ نے فرمایا: "میں علم کا شہر ہوں اور علی اس کا دروازہ"۔ ہر غزوے میں سب سے آگے رہے — کبھی پیٹھ نہ پھیری۔ نہج البلاغہ میں ان کی حکمت محفوظ ہے۔
+        <div class="en-box">Hz. Ali (RA) was the cousin and son-in-law of the Prophet ﷺ. He was the first child to embrace Islam. The Prophet ﷺ said: "I am the city of knowledge and Ali is its gate." He led from the front in every battle. His wisdom is preserved in the Nahj al-Balagha — a masterpiece of Arabic literature.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer><span>رَضِيَ اللهُ عَنْهُمْ</span> — اللّٰہ ان سب سے راضی ہو 🌙</footer>
+</div>
+
+<!-- ══════════ WAQIYAT ══════════ -->
+<div id="waqiyat" class="page">
+  <div class="quiz-hero">
+    <h1>📖 اہم واقعات</h1>
+    <p>خلفاء راشدین کے یادگار واقعات اور قرآنی آیات</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto;padding:20px 14px 30px;">
+
+    <div class="iblock">
+      <div class="iblock-title">🕌 غار ثور — ابوبکر صدیق ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        ہجرت مدینہ کے موقع پر نبی ﷺ اور حضرت ابوبکر ؓ نے غار ثور میں تین دن پناہ لی۔ دشمن دہانے تک پہنچ گئے — حضرت ابوبکر ؓ گھبرائے تو نبی ﷺ نے فرمایا: "غم نہ کر، اللّٰہ ہمارے ساتھ ہے۔" اللّٰہ نے یہ لمحہ قرآن میں محفوظ کیا۔
+        <div class="ayat"><div class="ayat-ar">إِذْ يَقُولُ لِصَاحِبِهِ لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا</div><span class="ayat-ref">سورۃ التوبہ: ۴۰</span></div>
+        <div class="en-box">During the Hijra, the Prophet ﷺ and Abu Bakr ؓ sheltered in the Cave of Thawr for three days. Enemies reached the entrance. Abu Bakr worried — the Prophet ﷺ said: "Do not grieve, Allah is with us." Allah immortalized this moment in the Quran (9:40).</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">⚡ عمر ؓ کا قبول اسلام <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        حضرت عمر ؓ تلوار لے کر نبی ﷺ کو قتل کرنے نکلے۔ بہن فاطمہ ؓ کے گھر سورۃ طٰہٰ کی تلاوت سن کر دل بدل گیا۔ فوراً نبی ﷺ کے پاس گئے اور اسلام قبول کیا — مسلمانوں نے تکبیر بلند کی اور کھل کر عبادت شروع کی۔
+        <div class="ayat"><div class="ayat-ar">يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ لِلَّهِ شُهَدَاءَ بِالْقِسْطِ</div><span class="ayat-ref">سورۃ المائدہ: ۸</span></div>
+        <div class="en-box">Hz. Umar set out with his sword to kill the Prophet ﷺ. On the way, hearing Quranic verses at his sister's home transformed him completely. He went straight to the Prophet ﷺ and embraced Islam. Muslims celebrated and began worshipping openly.</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">📗 تدوین قرآن — عثمان ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        مختلف علاقوں میں قرآن کی قراءت پر اختلاف ہونے لگا۔ حضرت عثمان ؓ نے حضرت زید بن ثابت ؓ کی سربراہی میں کمیٹی بنائی، معیاری نسخہ تیار کروایا اور پوری سلطنت میں بھجوایا۔ یہی قرآن آج دنیا بھر میں پڑھا جاتا ہے۔
+        <div class="ayat"><div class="ayat-ar">إِنَّا نَحْنُ نَزَّلْنَا الذِّكْرَ وَإِنَّا لَهُ لَحَافِظُونَ</div><span class="ayat-ref">سورۃ الحجر: ۹</span></div>
+        <div class="en-box">Different regions began disputing Quranic recitation. Hz. Uthman formed a committee under Zayd ibn Thabit to standardize the Quran. Copies were sent across the empire. This is the very same Quran recited by every Muslim on earth today.</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">🌙 لیلۃ المبیت — علی ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        ہجرت کی رات کافروں نے نبی ﷺ کو قتل کا منصوبہ بنایا۔ حضرت علی ؓ نے بغیر ڈر کے نبی ﷺ کی جگہ بستر پر سو کر دشمن کو دھوکہ دیا۔ اللّٰہ نے اس قربانی کو قرآن میں سراہا۔
+        <div class="ayat"><div class="ayat-ar">وَمِنَ النَّاسِ مَن يَشْرِي نَفْسَهُ ابْتِغَاءَ مَرْضَاتِ اللَّهِ</div><span class="ayat-ref">سورۃ البقرہ: ۲۰۷</span></div>
+        <div class="en-box">On the night of Hijra, enemies plotted to kill the Prophet ﷺ. Hz. Ali fearlessly slept in the Prophet's bed, deceiving the plotters. Allah praised this sacrifice in the Quran (2:207).</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">🏆 غزوہ خیبر — علی ؓ کا جھنڈا <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        نبی ﷺ نے فرمایا: "کل جھنڈا اسے دوں گا جو اللّٰہ اور رسول ﷺ کا محبوب ہے"۔ اگلی صبح علی ؓ کو بلایا — آنکھیں دکھتی تھیں — نبی ﷺ نے لعاب لگایا، فوراً ٹھیک ہو گئیں — جھنڈا دیا اور خیبر فتح ہوا۔
+        <div class="en-box">The Prophet ﷺ declared: "Tomorrow I will give the flag to one whom Allah and His Messenger love." The next morning Ali ؓ was called — his eyes were aching — the Prophet applied his blessed saliva, healing them instantly — gave him the flag — and Khaybar was conquered.</div>
+      </div>
+    </div>
+
+  </div>
+  <footer><span>رَضِيَ اللهُ عَنْهُمْ</span> 🌙</footer>
+</div>
+
+<!-- ══════════ FAZAIL ══════════ -->
+<div id="fazail" class="page">
+  <div class="quiz-hero">
+    <h1>✨ فضائل و مناقب</h1>
+    <p>نبی کریم ﷺ نے خلفاء کے بارے میں کیا ارشاد فرمایا؟</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto;padding:20px 14px 30px;">
+
+    <div class="iblock">
+      <div class="iblock-title">💛 فضائل ابوبکر صدیق ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        <ul class="flist">
+          <li><span class="ficon">🌟</span>"ابوبکر کا ایمان اگر امت کے ایمان سے تولا جائے تو ابوبکر کا پلڑا بھاری ہو۔" — نبی ﷺ (بیہقی)</li>
+          <li><span class="ficon">🌟</span>"میں نے جسے بھی دعوت دی اس نے ایک لمحہ سوچا — سوائے ابوبکر کے۔" — نبی ﷺ</li>
+          <li><span class="ficon">🌟</span>نبی ﷺ نے "عتیق من النار" — آتش جہنم سے آزاد — فرمایا۔ (ترمذی)</li>
+          <li><span class="ficon">🌟</span>مرض الوفات میں نبی ﷺ نے نماز کی امامت کروائی۔</li>
+          <li><span class="ficon">🌟</span>اپنا سارا مال — چار ہزار درہم — راہ خدا میں دے دیا۔</li>
+        </ul>
+        <div class="en-box">"If Abu Bakr's faith were weighed against the faith of all mankind, his would outweigh it." — Prophet ﷺ | "Everyone I invited hesitated, except Abu Bakr." | Called him "Ateeq" — freed from Hellfire. | Led prayers during the Prophet's final illness. | Donated all his wealth for Allah's cause.</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">🔵 فضائل عمر فاروق ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        <ul class="flist">
+          <li><span class="ficon">⚖️</span>"اگر میرے بعد کوئی نبی ہوتا تو وہ عمر ہوتے۔" — نبی ﷺ (ترمذی)</li>
+          <li><span class="ficon">⚖️</span>"شیطان جس راستے پر عمر کو دیکھتا ہے وہ راستہ چھوڑ دیتا ہے۔" — (بخاری، مسلم)</li>
+          <li><span class="ficon">⚖️</span>قرآن کی کئی آیات عمر ؓ کی رائے کے مطابق نازل ہوئیں — "موافقات عمر"۔</li>
+          <li><span class="ficon">⚖️</span>"عمر جنتی ہیں۔" — نبی ﷺ (ترمذی)</li>
+          <li><span class="ficon">⚖️</span>"میرے بعد ابوبکر اور عمر کی اقتدا کرو۔" — نبی ﷺ</li>
+        </ul>
+        <div class="en-box">"If there were a Prophet after me, it would be Umar." | "Shaytan flees from any path Umar walks." (Bukhari, Muslim) | Multiple Quranic verses revealed matching Umar's views — "Muwafaqat Umar". | "Umar is of the people of Paradise." | "Follow Abu Bakr and Umar after me."</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">🟣 فضائل عثمان غنی ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        <ul class="flist">
+          <li><span class="ficon">🌟</span>"ملائکہ بھی عثمان سے حیا کرتے ہیں۔" — نبی ﷺ (مسلم)</li>
+          <li><span class="ficon">🌟</span>"عثمان جنتی ہیں۔" — نبی ﷺ (ترمذی)</li>
+          <li><span class="ficon">🌟</span>نبی ﷺ کی دو بیٹیوں سے نکاح — ذو النورین۔</li>
+          <li><span class="ficon">🌟</span>غزوہ تبوک میں تن تنہا تہائی فوج کا سامان دیا۔</li>
+          <li><span class="ficon">🌟</span>بیعت رضوان میں نبی ﷺ نے ان کا ہاتھ بن کر بیعت لی۔</li>
+        </ul>
+        <div class="en-box">"Even the angels are modest before Uthman." (Muslim) | "Uthman is of Paradise." | Married two daughters of the Prophet ﷺ. | Equipped one-third of the Tabuk army alone. | At Hudaybiyyah the Prophet used his own hand to represent Uthman's pledge.</div>
+      </div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">🔴 فضائل علی المرتضیٰ ؓ <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">
+        <ul class="flist">
+          <li><span class="ficon">🦁</span>"میں علم کا شہر ہوں اور علی اس کا دروازہ۔" — نبی ﷺ</li>
+          <li><span class="ficon">🦁</span>"علی مجھ سے ہیں اور میں علی سے ہوں۔" — نبی ﷺ (ترمذی)</li>
+          <li><span class="ficon">🦁</span>"علی جنتی ہیں۔" — نبی ﷺ (ترمذی)</li>
+          <li><span class="ficon">🦁</span>غزوہ خیبر میں جھنڈا اور فتح کی خوشخبری۔</li>
+          <li><span class="ficon">🦁</span>"جس کا میں مولا ہوں اس کا علی مولا ہے۔" — غدیر خم (ترمذی)</li>
+        </ul>
+        <div class="en-box">"I am the city of knowledge and Ali is its gate." | "Ali is from me and I am from Ali." (Tirmidhi) | "Ali is of the people of Paradise." | At Khaybar — the flag and the prophecy of victory. | "Whoever has me as master, Ali is his master." — Ghadir Khumm.</div>
+      </div>
+    </div>
+
+  </div>
+  <footer><span>رَضِيَ اللهُ عَنْهُمْ</span> 🌙</footer>
+</div>
+
+<!-- ══════════ QURBANI ══════════ -->
+<div id="qurbani" class="page">
+  <div class="quiz-hero">
+    <h1>🌹 قربانیاں و شہادت</h1>
+    <p>خلفاء نے اسلام کے لیے کیا قربان کیا؟</p>
+  </div>
+  <div style="max-width:700px;margin:0 auto;padding:20px 14px 30px;">
+
+    <div class="iblock">
+      <div class="iblock-title">🌿 ابوبکر صدیق ؓ کی قربانیاں <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">اپنا سارا مال راہ خدا میں دیا۔ حضرت بلال ؓ اور دیگر غلاموں کو خرید کر آزاد کیا۔ غار ثور میں اپنی جان نبی ﷺ کے لیے ڈھال بنائی۔ مرتدین سے جنگ لڑ کر اسلام بچایا۔ ۲۲ جمادی الثانی ۱۳ ہجری کو ۶۳ سال کی عمر میں طبعی وفات — نبی ﷺ کے پہلو میں مدفون۔<div class="en-box">He donated all his wealth. He purchased and freed enslaved Muslims including Bilal ؓ. He shielded the Prophet in the cave. He fought to save Islam from apostasy. He passed away naturally on 22 Jumada al-Thani, 13 AH, aged 63 — buried beside the Prophet ﷺ.</div></div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">⚖️ عمر فاروق ؓ کی شہادت <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">۲۳ ہجری میں ابو لؤلؤ فیروز نے نماز فجر میں زہریلے خنجر سے زخمی کیا۔ کئی دن بعد شہید ہوئے۔ آخری الفاظ: "اے اللّٰہ! میں تجھ سے ملنے سے نہیں ڈرتا — بس مجھے معاف فرما۔" نبی ﷺ کے پہلو میں مدفون۔<div class="en-box">In 23 AH, Abu Lu'lu'a Firuz stabbed him with a poisoned dagger during Fajr prayer. He was martyred days later. His final words: "O Allah! I do not fear meeting You — only forgive me." Buried beside the Prophet ﷺ.</div></div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">📖 عثمان غنی ؓ کی شہادت <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">۳۵ ہجری میں باغیوں نے ۴۰ دن گھر کا محاصرہ کیا۔ آپ ؓ نے کہا: "میری وجہ سے مسلمانوں کا خون نہ بہے۔" ۱۸ ذوالحجہ کو قرآن تلاوت کرتے ہوئے شہید ہوئے — ۸۲ سال کی عمر میں۔<div class="en-box">In 35 AH, rebels besieged his house for 40 days. He said: "Let no Muslim blood be shed because of me." On 18 Dhul Hijja, he was martyred while reciting the Quran — aged 82.</div></div>
+    </div>
+
+    <div class="iblock">
+      <div class="iblock-title">🦁 علی المرتضیٰ ؓ کی شہادت <button class="en-btn" onclick="toggleEn(this)">🇬🇧 EN</button></div>
+      <div class="iblock-body">۱۹ رمضان ۴۰ ہجری کو نماز فجر جاتے ہوئے ابن ملجم نے زہریلی تلوار سے حملہ کیا۔ ۲۱ رمضان کو شہید ہوئے۔ آخری الفاظ: "رب کعبہ کی قسم، میں کامیاب ہو گیا!" نجف (عراق) میں مدفون۔<div class="en-box">On 19 Ramadan 40 AH, Ibn Muljam struck him with a poisoned sword as he headed to Fajr prayer. He was martyred on 21 Ramadan. His final words: "By the Lord of the Ka'ba — I have succeeded!" Buried in Najaf, Iraq.</div></div>
+    </div>
+
+  </div>
+  <footer><span>اللّٰہم صلِّ على محمد وعلى آل محمد</span> 🌙</footer>
+</div>
+
+<!-- ══════════ IMTAHAN (QUIZ+TEST MERGED) ══════════ -->
+<div id="imtahan" class="page">
+  <div class="quiz-hero">
+    <h1>📝 امتحان و کوئز</h1>
+    <p>Quiz &amp; Historical Test — Khulafa-e-Rashideen</p>
+  </div>
+
+  <!-- Mode selector -->
+  <div style="display:flex;gap:12px;padding:16px 14px 10px;max-width:700px;margin:0 auto;">
+    <button id="mode-quiz" onclick="setMode('quiz')"
+      style="flex:1;padding:14px 8px;border-radius:14px;border:2px solid var(--glight);
+      background:var(--glight);color:#fff;font-family:'Noto Nastaliq Urdu',serif;
+      font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      🧠 کوئز<br><span style="font-family:'Cinzel',serif;font-size:10px;font-weight:600;">30 Questions</span>
+    </button>
+    <button id="mode-test" onclick="setMode('test')"
+      style="flex:1;padding:14px 8px;border-radius:14px;border:2px solid var(--border);
+      background:var(--card);color:var(--text2);font-family:'Noto Nastaliq Urdu',serif;
+      font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;">
+      📜 تاریخی<br><span style="font-family:'Cinzel',serif;font-size:10px;font-weight:600;">30 Questions</span>
+    </button>
+  </div>
+
+  <div class="qstats">
+    <div class="qstat"><div class="qstat-n" id="im-q">1</div><div class="qstat-l">سوال<span class="qstat-en">Question</span></div></div>
+    <div class="qstat"><div class="qstat-n" id="im-c" style="color:#2E7D32;">0</div><div class="qstat-l">درست<span class="qstat-en">Correct</span></div></div>
+    <div class="qstat"><div class="qstat-n" id="im-w" style="color:#B71C1C;">0</div><div class="qstat-l">غلط<span class="qstat-en">Wrong</span></div></div>
+    <div class="qstat"><div class="qstat-n" id="im-t">30</div><div class="qstat-l">کل<span class="qstat-en">Total</span></div></div>
+  </div>
+  <div class="qprog"><div class="qprog-bar" id="imbar" style="width:2%"></div></div>
+  <div class="qarea" id="imtahan-area"></div>
+</div>
+
+<!-- ══════════ BOTTOM NAV ══════════ -->
+<div class="bnav">
+  <button class="nbtn active" id="bn-home" onclick="go('home',this)">
+    <span class="ni">🏠</span><span class="nur">مرکزی</span><span class="nen">Home</span>
+  </button>
+  <button class="nbtn" id="bn-khulafa" onclick="go('khulafa',this)">
+    <span class="ni">👑</span><span class="nur">خلفاء</span><span class="nen">Caliphs</span>
+  </button>
+  <button class="nbtn" id="bn-waqiyat" onclick="go('waqiyat',this)">
+    <span class="ni">📖</span><span class="nur">واقعات</span><span class="nen">Events</span>
+  </button>
+  <button class="nbtn" id="bn-fazail" onclick="go('fazail',this)">
+    <span class="ni">✨</span><span class="nur">فضائل</span><span class="nen">Virtues</span>
+  </button>
+  <button class="nbtn" id="bn-qurbani" onclick="go('qurbani',this)">
+    <span class="ni">🌹</span><span class="nur">قربانی</span><span class="nen">Sacrifice</span>
+  </button>
+  <button class="nbtn" id="bn-quiz" onclick="go('quiz',this)">
+    <span class="ni">🧠</span><span class="nur">کوئز</span><span class="nen">Quiz</span>
+  </button>
+  <button class="nbtn" id="bn-test" onclick="go('test',this)">
+    <span class="ni">📝</span><span class="nur">امتحان</span><span class="nen">Test</span>
+  </button>
+</div>
+
+<script>
+// ── NAV ──
+function go(id, btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tnbtn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const tnBtn = document.getElementById('tn-'+id);
+  if(tnBtn) tnBtn.classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='imtahan'){ curMode=null; setMode('quiz'); }
+}
+
+function goKhalifa(k){
+  go('khulafa', null);
+  const tn=document.getElementById('tn-khulafa');
+  if(tn)tn.classList.add('active');
+  setTimeout(()=>showKtab(k),80);
+}
+
+function showKtab(k){
+  document.querySelectorAll('.ktab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.kpage').forEach(p=>p.classList.remove('active'));
+  const tab=document.getElementById('kt-'+k);
+  const pg=document.getElementById('kp-'+k);
+  if(tab)tab.classList.add('active');
+  if(pg)pg.classList.add('active');
+}
+
+// ── EN TOGGLE ──
+function toggleEn(btn){
+  const box=btn.closest('.iblock-title').nextElementSibling.querySelector('.en-box');
+  if(!box)return;
+  const on=box.classList.toggle('show');
+  btn.classList.toggle('on',on);
+  btn.textContent=on?'🇬🇧 ✓':'🇬🇧 EN';
+}
+
+// ── QUIZ DATA ──
+const quizData=[
+  {q:"حضرت ابوبکر صدیق ؓ کا اصل نام کیا تھا؟",o:["عبداللّٰہ بن عثمان","عمر بن الخطاب","علی بن ابی طالب","عثمان بن عفان"],a:0,e:"آپ ؓ کا اصل نام عبداللّٰہ بن عثمان — 'ابوبکر' کنیت تھی۔"},
+  {q:"'الصدیق' کا لقب کسے ملا؟",o:["حضرت عمر ؓ","حضرت عثمان ؓ","حضرت ابوبکر ؓ","حضرت علی ؓ"],a:2,e:"معراج کی تصدیق پر نبی ﷺ نے حضرت ابوبکر ؓ کو 'الصدیق' کا لقب دیا۔"},
+  {q:"غار ثور میں نبی ﷺ کے ساتھ کون تھے؟",o:["حضرت علی ؓ","حضرت عمر ؓ","حضرت ابوبکر ؓ","حضرت عثمان ؓ"],a:2,e:"ہجرت کے وقت حضرت ابوبکر صدیق ؓ نبی ﷺ کے ساتھ غار ثور میں تھے۔"},
+  {q:"'الفاروق' کا لقب کسے دیا گیا؟",o:["حضرت ابوبکر ؓ","حضرت علی ؓ","حضرت عمر ؓ","حضرت عثمان ؓ"],a:2,e:"نبی ﷺ نے حضرت عمر ؓ کو 'الفاروق' کہا — حق و باطل میں فرق کرنے والے۔"},
+  {q:"'ذو النورین' کا لقب کس خلیفہ کو ملا؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:2,e:"حضرت عثمان ؓ نے نبی ﷺ کی دو بیٹیوں سے نکاح کیا — اس لیے ذو النورین۔"},
+  {q:"'باب علم' کا لقب کسے ملا؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:3,e:"نبی ﷺ نے فرمایا: 'میں علم کا شہر ہوں اور علی اس کا دروازہ'۔"},
+  {q:"قرآن مجید کو پہلی بار کتاب کی شکل میں کس نے جمع کروایا؟",o:["عثمان ؓ","علی ؓ","عمر ؓ","ابوبکر ؓ"],a:3,e:"حضرت ابوبکر ؓ نے جنگ یمامہ کے بعد قرآن کو پہلی بار مجتمع کروایا۔"},
+  {q:"قرآن کا معیاری نسخہ کس نے تیار کروایا؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:2,e:"حضرت عثمان ؓ نے معیاری نسخہ تیار کروا کر پوری سلطنت میں بھجوایا۔"},
+  {q:"لیلۃ المبیت کو نبی ﷺ کی جگہ کون سویا؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:3,e:"حضرت علی ؓ نے ہجرت کی رات نبی ﷺ کی جگہ بستر پر سو کر دشمنوں کو دھوکہ دیا۔"},
+  {q:"غزوہ خیبر میں جھنڈا کسے دیا گیا؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:3,e:"نبی ﷺ نے علی ؓ کو جھنڈا دیا اور خیبر فتح ہوا۔"},
+  {q:"حضرت عمر ؓ کو نماز میں کس نے زخمی کیا؟",o:["ابن ملجم","ابو لؤلؤ فیروز","مروان","یزید"],a:1,e:"ابو لؤلؤ فیروز نے نماز فجر میں زہریلے خنجر سے زخمی کیا — ۲۳ ہجری۔"},
+  {q:"حضرت علی ؓ کو کس نے شہید کیا؟",o:["ابو لؤلؤ","ابن ملجم","مروان","حجاج"],a:1,e:"ابن ملجم نے ۱۹ رمضان ۴۰ ہجری کو نماز فجر جاتے ہوئے حملہ کیا۔"},
+  {q:"حضرت عثمان ؓ کو کب شہید کیا گیا؟",o:["۲۳ ہجری","۳۵ ہجری","۴۰ ہجری","۱۳ ہجری"],a:1,e:"۱۸ ذوالحجہ ۳۵ ہجری کو قرآن تلاوت کے دوران شہید کیا گیا۔"},
+  {q:"ہجری کیلنڈر کس نے شروع کیا؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:1,e:"حضرت عمر فاروق ؓ نے ہجری کیلنڈر کا آغاز کیا۔"},
+  {q:"اسلام کی پہلی بحری فوج کس کے دور میں بنی؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:2,e:"حضرت عثمان ؓ کے دور میں پہلی اسلامی بحری فوج بنی اور قبرص فتح ہوا۔"},
+  {q:"حضرت ابوبکر ؓ کی خلافت کتنے عرصے رہی؟",o:["5 سال","10 سال","2 سال 3 ماہ","4 سال"],a:2,e:"۱۱ ہجری سے ۱۳ ہجری تک — تقریباً ۲ سال ۳ ماہ۔"},
+  {q:"حضرت عمر ؓ کے دور میں کون سا شہر فتح نہیں ہوا؟",o:["شام","مصر","اندلس","عراق"],a:2,e:"اندلس (اسپین) بعد میں فتح ہوا — عمر ؓ کے دور میں نہیں۔"},
+  {q:"نبی ﷺ نے فرمایا: 'شیطان عمر کا راستہ چھوڑ دیتا ہے' — کس کتاب میں؟",o:["ابن ماجہ","بخاری و مسلم","ابو داؤد","صرف ترمذی"],a:1,e:"صحیح بخاری اور صحیح مسلم دونوں میں۔"},
+  {q:"بیت المقدس کی فتح کس کے دور میں ہوئی؟",o:["ابوبکر ؓ","عمر ؓ","عثمان ؓ","علی ؓ"],a:1,e:"حضرت عمر فاروق ؓ کے دور میں — آپ خود بھی تشریف لے گئے۔"},
+  {q:"حضرت علی ؓ کے آخری الفاظ کیا تھے؟",o:["'اللّٰہ کا شکر'","'رب کعبہ کی قسم، میں کامیاب ہو گیا'","'مجھے معاف کرو'","'اسلام زندہ باد'"],a:1,e:"آپ ؓ نے شہادت کے وقت فرمایا: 'رب کعبہ کی قسم، میں کامیاب ہو گیا!'"},
+  {q:"'عشرہ مبشرہ' کا مطلب؟",o:["دس بہادر صحابہ","وہ دس جنہیں جنت کی خوشخبری ملی","دس بڑے علماء","پہلے دس مسلمان"],a:1,e:"وہ دس خوش قسمت صحابہ جنہیں نبی ﷺ نے اپنی زندگی میں جنت کی خوشخبری دی۔"},
+  {q:"حضرت عثمان ؓ نے بئر رومہ کیوں خریدا؟",o:["تجارت کے لیے","مسلمانوں کے لیے پانی مفت کروانے کو","گھر بنانے کو","بیت المال کے لیے"],a:1,e:"نبی ﷺ نے فرمایا: جو بئر رومہ وقف کرے اس کے لیے جنت ہے — عثمان ؓ نے خرید کر وقف کیا۔"},
+  {q:"حضرت علی ؓ کس کے بیٹے تھے؟",o:["ابو قحافہ کے","الخطاب کے","ابو طالب کے","عفان کے"],a:2,e:"حضرت علی ؓ نبی ﷺ کے چچا ابو طالب کے بیٹے — یعنی چچا زاد بھائی بھی تھے۔"},
+  {q:"حضرت عثمان ؓ کی شہادت کے وقت عمر کتنی تھی؟",o:["60 سال","70 سال","82 سال","90 سال"],a:2,e:"حضرت عثمان غنی ؓ ۸۲ سال کی عمر میں شہید ہوئے۔"},
+  {q:"حضرت ابوبکر ؓ نے حضرت بلال ؓ کو آزاد کیوں کروایا؟",o:["ذاتی غلام چاہیے تھا","اللّٰہ کی راہ میں — کافر تکلیف دیتے تھے","تجارت کے لیے","پیسے کمانے کو"],a:1,e:"امیہ بن خلف حضرت بلال ؓ کو گرم پتھر پر لٹاتا تھا — ابوبکر ؓ نے خرید کر آزاد کیا۔"},
+  {q:"موافقات عمر کیا ہیں؟",o:["عمر ؓ کی فتوحات","عمر ؓ کی رائے سے موافق نازل ہونے والی آیات","عمر ؓ کے فیصلے","عمر ؓ کی احادیث"],a:1,e:"قرآن کی کئی آیات حضرت عمر ؓ کی رائے کے عین مطابق نازل ہوئیں — انہیں 'موافقات عمر' کہتے ہیں۔"},
+  {q:"نبی ﷺ نے ابوبکر ؓ کو 'عتیق' کیوں کہا؟",o:["قدیم تھے","آتش جہنم سے آزاد ہونے کی خوشخبری پر","مال دار تھے","بہادر تھے"],a:1,e:"نبی ﷺ نے فرمایا: ابوبکر 'عتیق من النار' ہیں — آتش جہنم سے آزاد۔"},
+  {q:"حضرت عمر ؓ کس قبیلے سے تھے؟",o:["بنو تیم","بنو عدی","بنو ہاشم","بنو امیہ"],a:1,e:"حضرت عمر فاروق ؓ قریش کے قبیلے 'بنو عدی' سے تھے۔"},
+  {q:"حضرت عثمان ؓ کس قبیلے سے تھے؟",o:["بنو تیم","بنو عدی","بنو امیہ","بنو ہاشم"],a:2,e:"حضرت عثمان غنی ؓ قریش کے 'بنو امیہ' قبیلے سے تھے۔"},
+  {q:"حضرت علی ؓ کی پیدائش کہاں ہوئی؟",o:["مسجد نبوی","مدینہ","خانہ کعبہ کے اندر","طائف"],a:2,e:"روایت ہے کہ آپ ؓ خانہ کعبہ کے اندر پیدا ہوئے — ایک منفرد اعزاز۔"},
+];
+
+// ── TEST DATA ──
+const testData=[
+  {q:"حضرت ابوبکر ؓ نے کس بڑے مرتد جھوٹے نبی کو شکست دی؟",o:["اسودہ عنسی","مسیلمہ کذاب","طلیحہ اسدی","سجاح"],a:1,e:"جنگ یمامہ میں مسیلمہ الکذاب کو خالد بن ولید ؓ کے ذریعے شکست دی۔"},
+  {q:"غزوہ احد میں نبی ﷺ کے چچا حضرت حمزہ ؓ کو کس نے شہید کیا؟",o:["ابو جہل","ابو سفیان","وحشی بن حرب","عمرو بن عاص"],a:2,e:"وحشی بن حرب — ہند کے کہنے پر — نے نیزے سے حضرت حمزہ ؓ کو شہید کیا۔"},
+  {q:"ابو جہل کو غزوہ بدر میں کس نے قتل کیا؟",o:["حضرت علی ؓ","حضرت حمزہ ؓ","دو انصاری نوجوانوں نے","حضرت عمر ؓ"],a:2,e:"معاذ بن عمرو اور معوذ بن عفراء نے زخمی کیا — عبداللّٰہ بن مسعود ؓ نے سر قلم کیا۔"},
+  {q:"حضرت خالد بن ولید ؓ کب مسلمان ہوئے؟",o:["غزوہ بدر سے پہلے","غزوہ احد کے بعد","فتح مکہ سے پہلے ۸ ہجری میں","ہجرت کے بعد"],a:2,e:"حضرت خالد بن ولید ؓ نے فتح مکہ سے پہلے ۸ ہجری میں اسلام قبول کیا۔"},
+  {q:"'سیف اللّٰہ' (اللّٰہ کی تلوار) کا لقب کسے ملا؟",o:["حضرت علی ؓ","حضرت عمر ؓ","حضرت خالد بن ولید ؓ","حضرت زبیر ؓ"],a:2,e:"نبی ﷺ نے خالد بن ولید ؓ کو 'سیف اللّٰہ المسلول' کا لقب دیا۔"},
+  {q:"نبی ﷺ کی وفات کب اور کہاں ہوئی؟",o:["۱۰ ہجری — مکہ میں","۱۱ ہجری — مدینہ میں حضرت عائشہ ؓ کے حجرے میں","۱۲ ہجری — مدینہ میں","۱۳ ہجری — طائف میں"],a:1,e:"۱۲ ربیع الاول ۱۱ ہجری کو مدینہ منورہ میں حضرت عائشہ ؓ کے حجرے میں وفات ہوئی۔"},
+  {q:"حضرت عمر ؓ کے مشہور رات کے گشت میں انہوں نے کیا دیکھا؟",o:["چور","دشمن کا جاسوس","بھوکے بچے روتے ہوئے — ماں ہانڈی میں پانی ابالتی تھی","سوتا ہوا سپاہی"],a:2,e:"حضرت عمر ؓ نے خود آٹا، گھی، گوشت لا کر کھانا پکایا اور بچوں کو کھلایا۔"},
+  {q:"حضرت عثمان ؓ نے قرآن معیاری نسخہ کس کی سربراہی میں بنوایا؟",o:["حضرت علی ؓ","حضرت ابن مسعود ؓ","حضرت زید بن ثابت ؓ","حضرت ابن عباس ؓ"],a:2,e:"زید بن ثابت ؓ کی سربراہی میں چار رکنی کمیٹی نے یہ کام کیا۔"},
+  {q:"غزوہ موتہ میں پہلے تین سپہ سالار کون تھے؟",o:["خالد، عمرو، ابوبکر","زید بن حارثہ، جعفر، ابن رواحہ","عمر، عثمان، علی","ابوبکر، طلحہ، زبیر"],a:1,e:"پہلے زید بن حارثہ ؓ، پھر جعفر بن ابی طالب ؓ، پھر عبداللّٰہ بن رواحہ ؓ — تینوں شہید ہوئے۔"},
+  {q:"'عام الحزن' (غم کا سال) کسے کہتے ہیں؟",o:["جنگ احد کا سال","وہ سال جب خدیجہ ؓ اور ابو طالب دونوں انتقال کر گئے","فتح مکہ کا سال","ہجرت کا سال"],a:1,e:"نبوت کے دسویں سال — دونوں عزیز ترین ہستیاں رخصت ہوئیں۔"},
+  {q:"حضرت سلمان فارسی ؓ کا تعلق کہاں سے تھا؟",o:["شام","یمن","ایران — آتش پرست خاندان سے","ہند"],a:2,e:"ایران کے آتش پرست خاندان سے — سچے دین کی تلاش میں گھر چھوڑا، آخر میں نبی ﷺ تک پہنچے۔"},
+  {q:"خوارج کون تھے؟",o:["رومی فوجی","وہ جو علی ؓ کی ثالثی پر ناراض ہو کر نکل گئے","یہودی قبیلہ","منافق"],a:1,e:"جنگ صفین میں ثالثی قبول کرنے پر علی ؓ سے ناراض — انتہا پسند گروہ بنے — اور انہوں نے ہی علی ؓ کو شہید کیا۔"},
+  {q:"فتح مکہ کب ہوئی اور نبی ﷺ نے کیا کیا؟",o:["۶ ہجری — سب کو قتل کیا","۸ ہجری — تقریباً سب کو معاف کیا","۹ ہجری — جنگ لڑی","۷ ہجری — مذاکرات کیے"],a:1,e:"۸ ہجری — نبی ﷺ نے بلا تلوار چلائے مکہ فتح کیا اور عمومی معافی کا اعلان کیا۔"},
+  {q:"صلح حدیبیہ کو اللّٰہ نے کیا کہا؟",o:["شکست","معمولی واقعہ","فتح مبین","غلطی"],a:2,e:"اللّٰہ نے سورۃ الفتح میں صلح حدیبیہ کو 'فتحاً مبیناً' (کھلی فتح) کہا۔"},
+  {q:"نبی ﷺ کے وصال پر حضرت ابوبکر ؓ نے کیا کہا؟",o:["'نبی ﷺ نہیں گئے'","'جو محمد ﷺ کو پوجتا تھا وہ جانے — جو اللّٰہ کو پوجتا ہے وہ جانے کہ اللّٰہ زندہ ہے'","رونے لگے","کچھ نہ کہا"],a:1,e:"حضرت ابوبکر ؓ نے یہ الفاظ کہے اور حضرت عمر ؓ پر بھی سکون آ گیا۔"},
+  {q:"حضرت عثمان ؓ کے قاتل باغی کہاں سے آئے تھے؟",o:["شام","یمن","مصر، کوفہ اور بصرہ سے","ایران"],a:2,e:"مصر، کوفہ اور بصرہ سے آئے ہوئے باغیوں نے مدینہ میں شورش کی۔"},
+  {q:"حضرت علی ؓ کے دور میں جنگ جمل کیوں ہوئی؟",o:["ایران کے خلاف","عثمان ؓ کے قاتلوں کے معاملے میں اختلاف","یہودیوں کے خلاف","رومیوں کے خلاف"],a:1,e:"عثمان ؓ کے قاتلوں کو سزا دینے کے اختلاف پر — عائشہ ؓ، طلحہ ؓ اور زبیر ؓ بصرہ آئے۔"},
+  {q:"حضرت عمر ؓ نے بیت المقدس میں گرجا میں نماز کیوں نہیں پڑھی؟",o:["وقت نہیں تھا","ناپاک تھا","تاکہ مسلمان بعد میں اسے مسجد نہ بنا لیں","نماز کا وقت نہ تھا"],a:2,e:"یہ عمر ؓ کا عظیم انصاف تھا — مسیحیوں کے مقدس مقام کو محفوظ رکھا۔"},
+  {q:"حضرت ابوبکر ؓ نے خلیفہ بعد میں کسے نامزد کیا؟",o:["عثمان ؓ کو","علی ؓ کو","عمر ؓ کو","طلحہ ؓ کو"],a:2,e:"حضرت ابوبکر ؓ نے وصیت میں حضرت عمر ؓ کو اپنا جانشین مقرر کیا۔"},
+  {q:"حضرت عمر ؓ نے جانشین کا انتخاب کیسے کیا؟",o:["ایک شخص نامزد کیا","چھ صحابہ کی شوریٰ مقرر کی","فوج کو دیا","لکھ کر چھوڑا"],a:1,e:"چھ صحابہ — عثمان، علی، طلحہ، زبیر، سعد، عبدالرحمن ؓ — کی شوریٰ نے عثمان ؓ کا انتخاب کیا۔"},
+  {q:"حضرت جعفر بن ابی طالب ؓ کا کیا اعزاز ہے؟",o:["عمر ؓ کے بھائی","علی ؓ کے بڑے بھائی — غزوہ موتہ میں دونوں بازو کٹنے کے بعد جھنڈا سینے سے لگا کر شہید","نبی ﷺ کے بیٹے","ابوبکر ؓ کے داماد"],a:1,e:"جعفر ؓ علی ؓ کے بڑے بھائی — موتہ میں دونوں بازو کٹ جانے کے بعد جھنڈا سینے سے لگایا اور شہید ہوئے۔"},
+  {q:"نبی ﷺ کی بیٹی حضرت فاطمہ ؓ کس کی زوجہ تھیں؟",o:["ابوبکر ؓ کی","عمر ؓ کی","عثمان ؓ کی","علی ؓ کی"],a:3,e:"حضرت فاطمہ الزہرا ؓ حضرت علی ؓ کی زوجہ تھیں — اس لیے علی ؓ نبی ﷺ کے داماد بھی تھے۔"},
+  {q:"حضرت عمر ؓ کی بیٹی حضرت حفصہ ؓ کیا رشتہ رکھتی تھیں؟",o:["نبی ﷺ کی بیٹی","نبی ﷺ کی زوجہ","نبی ﷺ کی بہن","ابوبکر ؓ کی بیٹی"],a:1,e:"حضرت حفصہ ؓ عمر فاروق ؓ کی بیٹی اور نبی ﷺ کی زوجہ تھیں۔"},
+  {q:"حضرت ابوبکر ؓ نے اپنا سارا مال کتنا دیا؟",o:["ایک ہزار درہم","دو ہزار درہم","چار ہزار درہم","دس ہزار درہم"],a:2,e:"حضرت ابوبکر صدیق ؓ نے چار ہزار درہم راہ خدا میں دے دیے — خالی ہاتھ گھر آئے۔"},
+  {q:"غزوہ تبوک کب اور کس کے خلاف ہوا؟",o:["۸ ہجری — فارسیوں کے خلاف","۹ ہجری — رومیوں کے خلاف","۷ ہجری — یہودیوں کے خلاف","۱۰ ہجری — منافقوں کے خلاف"],a:1,e:"۹ ہجری میں رومیوں کے خلاف — وہ واپس ہو گئے اور جنگ نہ ہوئی۔"},
+  {q:"حضرت علی ؓ کی شہادت کس شہر میں ہوئی؟",o:["مدینہ","مکہ","کوفہ","بصرہ"],a:2,e:"کوفہ میں — وہیں ابن ملجم نے حملہ کیا اور آپ ؓ شہید ہوئے۔"},
+  {q:"'نہج البلاغہ' کسے کہتے ہیں؟",o:["عمر ؓ کی فتوحات کی کتاب","علی ؓ کے خطبات، خطوط اور حکمتوں کا مجموعہ","قرآن کی تفسیر","حدیث کی کتاب"],a:1,e:"نہج البلاغہ میں حضرت علی ؓ کے خطبات، خطوط اور مختصر حکمتیں ہیں — عربی ادب کا شاہکار۔"},
+  {q:"حضرت ابوبکر ؓ نے حضرت بلال ؓ کو آزاد کرنے میں کتنا دیا؟",o:["۵ اوقیہ","۷ سے ۹ اوقیہ چاندی — روایات مختلف","۱۰ اوقیہ","۱۵ اوقیہ"],a:1,e:"مختلف روایات کے مطابق ۵ سے ۹ اوقیہ چاندی ادا کی گئی۔"},
+  {q:"حضرت عثمان ؓ نے غزوہ تبوک میں کیا قربانی دی؟",o:["جنگ لڑی","تہائی فوج کا مکمل سامان اکیلے فراہم کیا","دشمن کو شکست دی","جاسوسی کی"],a:1,e:"حضرت عثمان ؓ نے اکیلے تہائی فوج کا سازوسامان، گھوڑے اور اونٹ فراہم کیے — نبی ﷺ نے جنت کی بشارت دی۔"},
+  {q:"'یوم الدار' کیا ہے؟",o:["فتح مکہ کا دن","عثمان ؓ کی شہادت کا دن","ہجرت کا دن","غزوہ بدر کا دن"],a:1,e:"'یوم الدار' وہ دن ہے جب باغیوں نے عثمان ؓ کے گھر پر حملہ کر کے شہید کیا — ۱۸ ذوالحجہ ۳۵ ہجری۔"},
+];
+
+// ── QUIZ ENGINE ──
+let qData=[], qIdx=0, qC=0, qW=0, qDone=false;
+
+function startQuiz(){
+  qData=[...quizData].sort(()=>Math.random()-0.5);
+  qIdx=0; qC=0; qW=0; qDone=false;
+  renderQ('quiz-area','qs-q','qs-c','qs-w','qbar',qData,quizData.length,'pickQ');
+}
+
+function startTest(){
+  qData=[...testData].sort(()=>Math.random()-0.5);
+  qIdx=0; qC=0; qW=0; qDone=false;
+  renderQ('test-area','ts-q','ts-c','ts-w','tbar',qData,testData.length,'pickT');
+}
+
+function renderQ(areaId,qId,cId,wId,barId,data,total,pickFn){
+  const area=document.getElementById(areaId);
+  if(qIdx>=data.length){showRes(area,qC,data.length);return;}
+  document.getElementById(qId).textContent=qIdx+1;
+  document.getElementById(barId).style.width=((qIdx/data.length)*100)+'%';
+  const d=data[qIdx];
+  const letters=['A','B','C','D'];
+  area.innerHTML=`
+    <div class="qbox">
+      <div class="qbox-head">
+        <div class="qnum"><div class="qnum-dot">${qIdx+1}</div>QUESTION ${qIdx+1} OF ${data.length}</div>
+        <div class="qtext">${d.q}</div>
+      </div>
+      <div class="qopts">
+        ${d.o.map((o,i)=>`<div class="qopt" id="opt${i}" onclick="${pickFn}(${i})"><div class="oletter">${letters[i]}</div><div class="otext">${o}</div></div>`).join('')}
+      </div>
+      <div class="qexp" id="qexp">💡 ${d.e}</div>
+    </div>
+    <div class="qnav">
+      <button class="qnbtn secondary" onclick="${qIdx===0?'':'prevQ(\''+areaId+'\',\''+qId+'\',\''+cId+'\',\''+wId+'\',\''+barId+'\',\''+pickFn+'\')'}" ${qIdx===0?'disabled':''}>
+        <span class="qnbtn-ur">◀ پچھلا</span><span class="qnbtn-en">PREVIOUS</span>
+      </button>
+      <button class="qnbtn primary" id="nextbtn" onclick="nextQ('${areaId}','${qId}','${cId}','${wId}','${barId}',${data===quizData?'quizData':'testData'},'${total}','${pickFn}')" disabled>
+        <span class="qnbtn-ur">اگلا ▶</span><span class="qnbtn-en">NEXT</span>
+      </button>
+    </div>`;
+}
+
+function pickQ(i){ pick(i,'quiz-area','qs-q','qs-c','qs-w','qbar',quizData,quizData.length,'pickQ'); }
+function pickT(i){ pick(i,'test-area','ts-q','ts-c','ts-w','tbar',testData,testData.length,'pickT'); }
+
+function pick(i,areaId,qId,cId,wId,barId,data,total,pickFn){
+  const opts=document.querySelectorAll('#'+areaId+' .qopt');
+  if(!opts[0]||opts[0].classList.contains('revealed'))return;
+  const d=data[qIdx];
+  opts.forEach((o,idx)=>{
+    o.classList.add('revealed');
+    if(idx===d.a)o.classList.add('correct');
+    else if(idx===i&&i!==d.a)o.classList.add('wrong');
+  });
+  if(i===d.a){qC++;document.getElementById(cId).textContent=qC;}
+  else{qW++;document.getElementById(wId).textContent=qW;}
+  const exp=document.getElementById('qexp');
+  if(exp)exp.classList.add('show');
+  const nb=document.getElementById('nextbtn');
+  if(nb)nb.disabled=false;
+}
+
+function nextQ(aId,qId,cId,wId,bId,data,total,fn){
+  qIdx++;
+  renderQ(aId,qId,cId,wId,bId,data,total,fn);
+  window.scrollTo(0,0);
+}
+
+function prevQ(aId,qId,cId,wId,bId,fn){
+  if(qIdx>0){qIdx--;const data=fn==='pickQ'?quizData:testData;renderQ(aId,qId,cId,wId,bId,data,data.length,fn);window.scrollTo(0,0);}
+}
+
+function showRes(area,score,total){
+  const pct=Math.round((score/total)*100);
+  let em='🌟',msg='اچھی کوشش کی۔';
+  if(pct>=90){em='🏆';msg='ماشاء اللّٰہ! آپ ماہر ہیں!';}
+  else if(pct>=70){em='⭐';msg='بہت اچھا! مزید مطالعہ کریں۔';}
+  else if(pct>=50){em='📖';msg='ٹھیک ہے! مزید پڑھنے کی ضرورت ہے۔';}
+  else{em='💪';msg='ہمت نہ ہاریں — دوبارہ کوشش کریں!';}
+  area.innerHTML=`
+    <div class="result-box">
+      <div class="result-emoji">${em}</div>
+      <div class="result-score">${score} / ${total}</div>
+      <div class="result-pct">${pct}% Correct</div>
+      <div class="result-msg">${msg}</div>
+      <button class="result-restart" onclick="${area.id==='quiz-area'?'startQuiz':'startTest'}()">
+        دوبارہ کھیلیں 🔄<br>
+        <span style="font-family:'Cinzel',serif;font-size:10px;">PLAY AGAIN</span>
+      </button>
+    </div>`;
+}
+</script>
+</body>
+</html>
